@@ -1,0 +1,14 @@
+mixin messages(message)
+    div
+        span
+            b= moment(message.time).format('YYYY-MM-DD H:m:s') + ': '
+            i= message.message
+
+h4 Список сообщений
+
+div(class="messages float-right" id="messages")
+    each message in messages
+        +messages(message)
+
+script
+    include script.js
